@@ -40,3 +40,14 @@ export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 EOF
+
+# Extensions
+
+cat << EOF > /home/$username/extensions.list
+https://extensions.gnome.org/extension/1160/dash-to-panel/
+https://extensions.gnome.org/extension/28/gtile/
+https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+https://extensions.gnome.org/extension/1231/switch-workspace/
+https://extensions.gnome.org/extension/1414/unblank/
+https://extensions.gnome.org/extension/302/windowoverlay-icons/
+EOF
