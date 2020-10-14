@@ -7,8 +7,8 @@ username=$(cat /etc/passwd | grep 1000 | awk -F\: '{print $1}')
 ## Background
 
 wget https://github.com/maximesence/fedora-minimal-install/raw/main/material-white.png -P /home/$username/.local/share/backgrounds/
-gsettings set org.gnome.desktop.background picture-uri 'file:///home/$username/.local/share/backgrounds/material-white.png'
-gsettings set org.gnome.desktop.screensaver picture-uri 'file:///home/$username/.local/share/backgrounds/material-white.png'
+gsettings set org.gnome.desktop.background picture-uri 'file:///home/'$username'/.local/share/backgrounds/material-white.png'
+gsettings set org.gnome.desktop.screensaver picture-uri 'file:///home/'$username'/.local/share/backgrounds/material-white.png'
 
 ## Theme, Cursor and Icon
 
