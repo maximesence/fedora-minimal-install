@@ -32,7 +32,7 @@ EOF
 
 dnf upgrade -y
 dnf install -y @base-x 
-dnf install -y gnome-shell gnome-terminal nautilus gnome-tweaks xdg-user-dirs
+dnf install -y gnome-shell gnome-terminal nautilus gnome-tweaks chrome-gnome-shell xdg-user-dirs
 lspci | grep NVIDIA && dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
 dnf install -y firewall-config htop bpytop nmap wavemon exa vim
 dnf install -y filezilla vlc obs-studio flameshot codium firefox chromium google-chrome-stable steam gimp
