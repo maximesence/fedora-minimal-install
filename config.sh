@@ -38,11 +38,5 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
-
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-shopt -s histappend
-stophistory () {
-  PROMPT_COMMAND="bash_prompt_command"
-  echo 'History recording stopped. Make sure to `kill -9 $$` at the end of the session.'
-}
 EOF
