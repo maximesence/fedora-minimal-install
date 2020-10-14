@@ -1,3 +1,7 @@
+# Get User
+
+username=$(cat /etc/passwd | grep 1000 | awk -F\: '{print $1}')
+
 # Customize Session
 
 ## Background
@@ -23,10 +27,6 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Source Code Pro Bo
 gsettings set org.gnome.desktop.interface enable-hot-corners false
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,close'
-
-# Get User
-
-username=$(cat /etc/passwd | grep 1000 | awk -F\: '{print $1}')
 
 # Set alias and bash history configuration
 
