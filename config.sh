@@ -1,26 +1,3 @@
-# Get User
-
-username=$(cat /etc/passwd | grep 1000 | awk -F\: '{print $1}')
-
-# Set alias and bash history configuration
-
-cat << EOF >> /home/$username/.bashrc
-alias ls="exa --group-directories-first --time-style long-iso"
-
-# http://stackoverflow.com/questions/9457233/unlimited-bash-history
-export HISTFILESIZE=
-export HISTSIZE=
-export HISTTIMEFORMAT="[%F %T] "
-export HISTFILE=~/.bash_eternal_history
-
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-shopt -s histappend
-stophistory () {
-  PROMPT_COMMAND="bash_prompt_command"
-  echo 'History recording stopped. Make sure to `kill -9 $$` at the end of the session.'
-}
-EOF
-
 # Customize Session
 
 ## Background
@@ -46,3 +23,26 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Source Code Pro Bo
 gsettings set org.gnome.desktop.interface enable-hot-corners false
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,close'
+
+# Get User
+
+username=$(cat /etc/passwd | grep 1000 | awk -F\: '{print $1}')
+
+# Set alias and bash history configuration
+
+cat << EOF >> /home/$username/.bashrc
+alias ls="exa --group-directories-first --time-style long-iso"
+
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
+
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+shopt -s histappend
+stophistory () {
+  PROMPT_COMMAND="bash_prompt_command"
+  echo 'History recording stopped. Make sure to `kill -9 $$` at the end of the session.'
+}
+EOF
