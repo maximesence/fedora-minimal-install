@@ -36,7 +36,8 @@ dnf install -y gnome-shell gnome-terminal nautilus gnome-tweaks chrome-gnome-she
 lspci | grep NVIDIA && dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda
 dnf install -y firewall-config htop bpytop nmap wavemon exa vim
 dnf install -y filezilla vlc obs-studio flameshot codium firefox chromium google-chrome-stable steam gimp
-dnf install -y breeze-cursor-theme papirus-icon-theme adobe-source-code-pro-fonts gnome-themes-extra google-noto-emoji-color-fonts
+dnf install -y breeze-cursor-theme papirus-icon-theme adobe-source-code-pro-fonts gnome-themes-extra 
+dnf install -y google-noto-emoji-color-fonts google-droid-sans-fonts # Emoji + non-latin characters
 
 # Hide Desktop Icons
 
