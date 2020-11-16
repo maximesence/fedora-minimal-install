@@ -1,14 +1,14 @@
 # Get User
 
-username=$(cat /etc/passwd | grep 1000 | awk -F\: '{print $1}')
+currentuser=$(id -un)
 
 # Customize Session
 
 ## Background
 
-wget https://github.com/maximesence/fedora-minimal-install/raw/main/material-white.png -P /home/$username/.local/share/backgrounds/
-gsettings set org.gnome.desktop.background picture-uri 'file:///home/'$username'/.local/share/backgrounds/material-white.png'
-gsettings set org.gnome.desktop.screensaver picture-uri 'file:///home/'$username'/.local/share/backgrounds/material-white.png'
+wget https://github.com/maximesence/fedora-minimal-install/raw/main/material-white.png -P /home/$currentuser/.local/share/backgrounds/
+gsettings set org.gnome.desktop.background picture-uri 'file:///home/'$currentuser'/.local/share/backgrounds/material-white.png'
+gsettings set org.gnome.desktop.screensaver picture-uri 'file:///home/'$currentuser'/.local/share/backgrounds/material-white.png'
 
 ## Theme, Cursor and Icon
 
@@ -30,7 +30,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,c
 
 # Set alias and bash history configuration
 
-cat << EOF >> /home/$username/.bashrc
+cat << EOF >> /home/$currentuser/.bashrc
 alias ls="exa --group-directories-first --time-style long-iso"
 
 # http://stackoverflow.com/questions/9457233/unlimited-bash-history
@@ -43,7 +43,7 @@ EOF
 
 # Extensions
 
-cat << EOF > /home/$username/extensions.list
+cat << EOF > /home/$currentuser/extensions.list
 https://extensions.gnome.org/extension/1160/dash-to-panel/
 https://extensions.gnome.org/extension/545/hide-top-bar/
 https://extensions.gnome.org/extension/906/sound-output-device-chooser/
