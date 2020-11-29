@@ -43,6 +43,10 @@ dnf install -y google-noto-emoji-color-fonts google-droid-sans-fonts # Emoji + n
 
 mv /usr/share/applications/htop.desktop /usr/share/applications/htop.desktop.hide
 
+# Disable power saving
+
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
 # Enable Graphical User Interface
 
 systemctl set-default graphical.target
